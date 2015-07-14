@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # This is a comment.
-# Cache manifest version 0.0.20
+# Cache manifest version 0.1.1
 # If you change the version number in this comment,
 # the cache manifest is no longer byte-for-byte
 # identical.
@@ -42,9 +42,6 @@ https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js
 /js/humlyapp/humlyapp.js
 /js/humlyapp/profileControllers.js
 
-
-/bookmark_bubble.js
-/example.js
 
 NETWORK:
 # All URLs that start with the following lines

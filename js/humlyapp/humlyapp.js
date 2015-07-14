@@ -6,8 +6,7 @@
 	var app = angular.module('humly', [
 		"firebase",
 		"ngRoute", 
-		"profileControllers",
-		'naif.base64'
+		"profileControllers"
 		]);
 
 

@@ -108,8 +108,8 @@ profileControllers.controller('NewProfileCtrl', ['$scope', '$location',
 
   }]);
 
-profileControllers.controller('ProfileDetailCtrl', ['$scope', '$routeParams','$firebaseObject','$location','Page',"$firebaseArray",
-  function($scope, $routeParams,$firebaseObject, $location, Page, $firebaseArray) {
+profileControllers.controller('ProfileDetailCtrl', ['$scope', '$routeParams','$firebaseObject','$location','Page',
+  function($scope, $routeParams,$firebaseObject, $location, Page) {
     $scope.profileId = $routeParams.profileId;
 	// -Ju6EG4IRy_GnAMblgaO
 	$scope.info= {};
