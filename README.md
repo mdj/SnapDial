@@ -1,0 +1,2 @@
+# SnapDial
+Home Screen Hygge
