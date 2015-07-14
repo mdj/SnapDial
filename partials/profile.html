@@ -1,0 +1,229 @@
+<!-- Profile view -->
+<!-- ng-controller="ProfileCtrl" -->
+
+<!-- <div><a ng-href="tel:{{info.phone}}">{{info.phone}}</a></div> 
+<div ng-show="info.isMobile"><a ng-href="sms:{{info.phone}}">SMS {{info.phone}}</a></div> 
+ -->
+
+<style type="text/css">
+	
+	.profile_picture {
+		background-image: url({{info.image}});
+
+	}
+	.background-image {
+		background-image: url({{info.image}});
+
+	}
+
+</style>
+
+
+
+
+<script>
+$("div.middle").ready(function() {
+  // activate no-scroll
+  $("body").bind("touchmove", function(e) { e.preventDefault();});
+});
+
+</script>
+
+
+
+<div class="background-image"></div>
+<div class="background-image_white"></div>
+
+
+
+<div id="top_bar">
+    <div>
+        <a ng-href="sms:&body=Add {{nfo.name}} to your home screen: {{url}}"><div id="logo"></div></a>
+    </div>
+    <div id="top_menu">
+        <a href="/new" target="_blank"><div class="add_person_icon" ></div></a>
+    </div>
+</div>
+
+
+ <div class="middle">
+    <div>
+        <div ng-show="info.image.length > 0" class="profile_picture"></div>
+        <div  class="name_wrap">
+            <div ng-show="info.name" class="name">
+                {{info.name}}
+            </div>
+            <div ng-show="info.position" class="position">
+                {{info.position}}
+            </div>
+            <div ng-show="info.company" class="company">
+                {{info.company}}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- $location.path('call:{{info.phone}}') -->
+<!-- <div class="bottom_buttons"> -->
+    <div class="actions">
+        <!-- <div class="call"> -->
+          <a ng-href="tel:{{info.phone}}" class="call">
+            <div style="position: absolute; z-index: 999999; bottom: 5%; left: calc(50% - 1.4em ); width: 3.5em; height: 3.5em; border-radius: 1.75em; background: url('images/phone@2x.png') no-repeat; background-size:50%; background-position: center center; background-color: #8DD241;"> </div>
+<!--             <div class="v" ><div class="roundbtn"><div style="background: url('images/phone@2x.png') no-repeat; background-size:contain; width: 50%; height: 50%; position: absolute; background-position: center center;"></div></div>
+                        <div ng-show="info.phone" class="disp_phone">{{info.phone}}</div>
+ -->                    
+ <div ng-show="info.phone" class="disp_phone">{{info.phone}}</div>
+
+            </a>
+        <!-- </div> -->
+        <a class="sms"  ng-href="sms:{{info.phone}}">
+                    <div style="position: absolute; z-index: 999999; bottom: 5%; right: calc(50% - 1.4em ); width: 3.5em; height: 3.5em; border-radius: 1.75em; background: url('images/message@2x.png') no-repeat; background-size:50%; background-position: center center; background-color: #666;"> </div>
+<!--             <div class="v"><div class="roundbtn"><div style="background: url('images/message@2x.png') no-repeat; background-size:contain; width: 50%; height: 50%; position: absolute; background-position: center;"></div></div></div> -->
+
+        </a>            
+    <!-- </div> -->
+    <!-- <div class="menus"> -->
+
+<!--         <div class="socal">
+            <div>Social <img src="images/blackangle@2x.png" width="20" height="11"></div>
+        </div> -->
+<!--         <div class="edit" ng-click="goto('sms:&body=Add ' + info.name + ' to your home screen: ' + url )">
+            <div>Share contact</div>
+        </div> -->
+    <!-- </div> -->
+ 
+</div>
+
+<!-- <div class="social_menu">
+    <ul data-role="listview" data-inset="true" ng-repeat="link in info.social">
+            <li><div class="bg"></div><div class="content"><img src="images/w_ico@2x.png" alt="{{link.type}}" class="ui-li-icon" style="height: 32px; width: 32px;"><a ng-href="{{link.url}}">{{link.text}}</a></div></li>
+
+        <li><div class="bg"></div><div class="content"><img src="images/w_ico@2x.png" alt="Corporate Website" class="ui-li-icon" style="height: 32px; width: 32px;"><a href="http://gluino.com">gluino.com</a></div></li>
+        <li><div class="bg"></div><div class="content"><img src="images/w_ico@2x.png" alt="Personal Website" class="ui-li-icon"  style="height: 32px; width: 32px;"><a href="http://mortendam.com">mortendam.com</a></div></li>
+        <li><div class="bg"></div><div class="content"><img src="images/linked_ico@2x.png" alt="LinkedIn" class="ui-li-icon"  style="height: 32px; width: 32px;"><a href="https://dk.linkedin.com/in/mortendam">LinkedIn</a></div></li>
+        <li><div class="bg"></div><div class="content"><img src="images/face_ico@2x.png" alt="Facebook" class="ui-li-icon " style="height: 32px; width: 32px;"><a href="https://www.facebook.com/mortendamj">Facebook</a></div></li>
+    </ul>
+</div>
+
+ -->
+        
+    <script>
+
+    
+    // add to homes
+
+
+    
+      function cancelBubleEv(e)
+      {
+           e = e||event;
+           e.stopPropagation? e.stopPropagation() : e.cancelBubble = true;
+
+      }
+    
+    
+      isLandscape = false;
+      function landscape() {
+          // console.log("setting landscape");
+          $(".profile_picture").addClass("landscape");
+          $(".name").addClass("landscape");
+          $(".position").addClass("landscape");
+          $(".company").addClass("landscape");
+          $(".middle").addClass("landscape");
+          
+          isLandscape = true;
+      }
+      
+      function portrait() {
+          // console.log("setting portrait");
+          
+          $(".profile_picture").removeClass("landscape");
+          $(".name").removeClass("landscape");
+          $(".position").removeClass("landscape");
+          $(".company").removeClass("landscape");
+          $(".middle").removeClass("landscape");
+          
+          isLandscape = false;
+          
+      }
+    
+    
+        // $(document).ready(function() {
+            
+            
+            // jQuery( ".profile_picture" ).on( "taphold", function( event ) {
+            //     console.log("editing picture");
+                
+            // } );
+            
+            // jQuery( ".name" ).on( "taphold", function( event ) {
+            //     console.log("editing name");
+                
+            // } );
+            
+            // jQuery( ".position" ).on( "taphold", function( event ) {
+            //     console.log("editing position");
+                
+            // } );
+            
+            // jQuery( ".company" ).on( "taphold", function( event ) {
+            //     console.log("editing company");
+                
+            // } );
+
+            // jQuery( ".call" ).on( "taphold", function( event ) {
+            //     console.log("editing call");
+            // } );
+            
+            // jQuery( ".sms" ).on( "taphold", function( event ) {
+            //     console.log("editing sms");
+                
+            // } );
+
+            // jQuery( ".socal" ).on( "taphold", function( event ) {
+            //     console.log("editing social");
+                
+            // } );
+
+            // $("#logo").on("tap", function () {
+            //     document.location = "/edit.html";
+            // })
+            
+            $(document).on("click", function () {
+               $(".social_menu").hide();
+
+            });
+            
+
+            // $("div.edit").on("click", function(event) {
+            //     document.location = "sms:&body=Add Morten Dam to your home screen: http://humly.co/#/profiles/{{profileId}}"
+            // });
+            
+
+            $( window ).on( "orientationchange", function( event ) {
+
+                if (event.orientation == "landscape" && !isLandscape) {
+                    landscape();
+                } else if (event.orientation == "portrait" && isLandscape) {
+                     portrait();
+                }
+              
+            });   
+            
+            $(".socal").on("click", function (event) {
+                $(".social_menu").toggle();
+                cancelBubleEv(event);
+            });
+            
+            $(".social_menu").on("click", function (event) {
+                cancelBubleEv(event);                
+            })
+            
+            portrait(); // default orientation
+
+        // });
+ 
+    </script>
+ 
+

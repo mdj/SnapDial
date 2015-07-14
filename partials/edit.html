@@ -1,0 +1,216 @@
+
+<style type="text/css" media="screen">
+.upload_img {
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;   
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #999;
+    background: rgba(50, 50, 50, 0.5) url(/images/cam.png) no-repeat center center;
+    background-size: 40% ;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+/*            opacity: 0;*/
+    
+ }
+ .file_input {
+     position: relative;
+     display: block;
+     width: 100%;
+     height: 200px;
+ 	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+     opacity: 0;             
+ }
+
+.profile_picture {
+	background-image: url(data:image/png;base64,{{info.image.base64}});
+
+}
+.background-image {
+	background-image: url(data:image/png;base64,{{info.image.base64}});
+
+}
+</style>
+
+<div class="background-image"></div>
+<div class="background-image_white"></div>
+
+<div id="top_bar">
+    <div id="logo">
+        <a ng-href="#/profiles/{{profileId}}">Done</a>
+    </div>
+    <div id="top_menu">
+        <a href="http://humly.gluino.com/new" target="_blank"><div class="add_person_icon"></div></a>
+    </div>
+</div>
+
+
+<div class="middle">
+    <div>
+        <div class="profile_picture "><div class="upload_img"><input type="file" class="file_input _n _5f0v" title="Choose a file to upload" accept="image/*" autofocus="1" id="js_19" name="photo"></div></div>
+        <div class="name_wrap">
+            <div class="name">
+                {{info.name}}
+            </div>
+            <div class="position">
+                {{info.position}}
+            </div>
+            <div class="company">
+                {{info.company}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bottom_buttons">
+    <div class="actions">
+        <div class="call">
+            <div class="v"><div class="roundbtn"><div style="background: url('images/phone@2x.png') no-repeat; background-size:contain; width: 100%; height: 100%; position: absolute; background-position: center;"></div></div></div>
+        </div>
+        <div class="sms">
+            <div class="v"><div class="roundbtn"><div style="background: url('images/message@2x.png') no-repeat; background-size:contain; width: 100%; height: 100%; position: absolute; background-position: center;"></div></div></div>
+        </div>            
+    </div>
+    <div class="menus">
+        <div class="socal">
+            <div>Social <img src="images/blackangle@2x.png" width="20" height="11"></div>
+        </div>
+        <div class="edit">
+            <div>Share contact</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="social_menu">
+
+    <ul data-role="listview" data-inset="true" ng-repeat="link in info.social">
+            <li><div class="bg"></div><div class="content"><img src="images/w_ico@2x.png" alt="{{link.type}}" class="ui-li-icon" style="height: 32px; width: 32px;"><a ng-href="{{link.url}}">{{link.text}}</a></div></li>
+
+    </ul>
+</div>
+
+
+    <script>
+
+    
+      page_popup_bubble = "#index";
+    
+      function cancelBubleEv(e)
+      {
+           e = e||event;
+           e.stopPropagation? e.stopPropagation() : e.cancelBubble = true;
+
+      }
+    
+    
+      isLandscape = false;
+      function landscape() {
+          // console.log("setting landscape");
+          $(".profile_picture").addClass("landscape");
+          $(".name").addClass("landscape");
+          $(".position").addClass("landscape");
+          $(".company").addClass("landscape");
+          $(".middle").addClass("landscape");
+          
+          isLandscape = true;
+      }
+      
+      function portrait() {
+          // console.log("setting portrait");
+          
+          $(".profile_picture").removeClass("landscape");
+          $(".name").removeClass("landscape");
+          $(".position").removeClass("landscape");
+          $(".company").removeClass("landscape");
+          $(".middle").removeClass("landscape");
+          
+          isLandscape = false;
+          
+      }
+    
+    
+        // $(document).ready(function() {
+            
+            
+            // jQuery( ".profile_picture" ).on( "taphold", function( event ) {
+            //     console.log("editing picture");
+                
+            // } );
+            
+            // jQuery( ".name" ).on( "taphold", function( event ) {
+            //     console.log("editing name");
+                
+            // } );
+            
+            // jQuery( ".position" ).on( "taphold", function( event ) {
+            //     console.log("editing position");
+                
+            // } );
+            
+            // jQuery( ".company" ).on( "taphold", function( event ) {
+            //     console.log("editing company");
+                
+            // } );
+
+            // jQuery( ".call" ).on( "taphold", function( event ) {
+            //     console.log("editing call");
+            // } );
+            
+            // jQuery( ".sms" ).on( "taphold", function( event ) {
+            //     console.log("editing sms");
+                
+            // } );
+
+            // jQuery( ".socal" ).on( "taphold", function( event ) {
+            //     console.log("editing social");
+                
+            // } );
+
+            // $("#logo").on("tap", function () {
+            //     document.location = "/edit.html";
+            // })
+            
+            $(document).on("click", function () {
+               $(".social_menu").hide();
+
+            });
+            
+
+            $("div.edit").on("click", function(event) {
+                document.location = "sms:&body=Add Morten Dam to your home screen: http://humly.co/1lsfh231"
+            });
+            
+
+            $( window ).on( "orientationchange", function( event ) {
+
+                if (event.orientation == "landscape" && !isLandscape) {
+                    landscape();
+                } else if (event.orientation == "portrait" && isLandscape) {
+                     portrait();
+                }
+              
+            });   
+            
+            $(".socal").on("click", function (event) {
+                $(".social_menu").toggle();
+                cancelBubleEv(event);
+            });
+            
+            $(".social_menu").on("click", function (event) {
+                cancelBubleEv(event);                
+            })
+            
+            portrait(); // default orientation
+
+        // });
+ 
+    </script>
+ 

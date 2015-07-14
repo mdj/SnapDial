@@ -1,0 +1,360 @@
+/*
+                                __      _ _                   _   
+                               / _|    | (_)                 | |  
+ _ __ ___   __ _ _ __ ___ ___ | |_ ___ | |_  ___   _ __   ___| |_ 
+| '_ ` _ \ / _` | '__/ __/ _ \|  _/ _ \| | |/ _ \ | '_ \ / _ \ __|
+| | | | | | (_| | | | (_| (_) | || (_) | | | (_) || | | |  __/ |_ 
+|_| |_| |_|\__,_|_|  \___\___/|_| \___/|_|_|\___(_)_| |_|\___|\__|
+                                                                  
+*/
+
+/* BASIC RESET */
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{margin:0; padding:0;}
+
+/* HTML ELEMENTS */
+body { font: 12px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif; }
+h1 { padding:60px 0 0 40px; }
+p { padding:10px 40px; }
+a { color:#999; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+
+html {
+    overflow: hidden;
+}
+
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .background-image {
+      /*background: url('/images/morten.jpg');*/
+      
+      background-size: cover;
+      display: block;
+      filter: blur(10px);
+      -webkit-filter: blur(10px);
+/*      height: 800px;*/
+      left: -20px;
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      bottom: -20px;
+      z-index: 1;
+      image-orientation: from-image;
+
+    }
+    
+    .background-image_white {
+      background-color: rgba(255, 255, 255, 0.7);
+      display: block;
+      left: -20px;
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      bottom: -20px;
+      z-index: 1;
+    }
+    
+
+    
+    #top_bar {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        height: 14%;
+        top: 0px;
+        /*background: rgba(74,73,74,0.70);*/
+/*        background: rgba(255, 255, 255, 0.5);*/
+        
+        color: black;
+        z-index: 3;
+        font-weight: bold;
+        font-size: 150%;
+    }
+
+    #top_menu_left {
+        float: right;
+        position: absolute;
+        bottom: 0%;
+        right: 2%;        
+        height: 100%;
+
+    }
+
+
+    #logo {
+
+        position: absolute;
+        bottom:0px;
+        left: 2%;
+
+        background: url('/images/share@2x.png') no-repeat;
+        background-size: contain;
+        background-position: bottom left;
+
+        width: 150px;   
+        height: 80%;
+    }
+    #top_menu {
+        float: right;
+        position: absolute;
+        bottom: 0%;
+        right: 2%;        
+        height: 100%;
+
+    }
+    
+    .add_person_icon {
+        position: absolute;
+        background: url('/images/new@2x.png') no-repeat;
+        background-size: contain;
+        background-position: bottom right;
+        bottom: 0px;
+        right: 0px;
+        width: 150px;   
+        height: 80%;
+        
+    }
+    a {
+        color: #fff;
+    }
+    /*
+    Bottom 
+    */
+    .actions {
+        height: 100%;
+        width: 100%;
+        font-size: 250%;        
+    }
+    .menus {
+        height: 30%;
+        width: 100%;
+        font-size: 170%;
+    }
+
+    .socal, .edit, .sms, .call {
+        position: absolute;
+        width: 50%;
+        height: inherit;
+        display: table;   
+        overflow: hidden;
+    }
+    
+    .edit {
+        right: 0px;
+        bottom: 0px;
+        top: 70%;
+        padding-left: 1px;
+        padding-top: 2px;
+    }
+    .socal {
+        left: 0px;
+        bottom: 0px;
+        top: 70%;
+        padding-right: 1px;
+        padding-top: 2px;
+    }
+
+    .sms {
+        right: 0px;
+        bottom: 0px;
+        top: 0;
+        padding-left: 1px;
+        padding-top: 2px;
+    }
+    .call {
+        left: 0px;
+        bottom: 0px;
+        top: 0;
+        padding-right: 1px;
+        padding-top: 2px;
+    }
+
+
+    .edit div, .socal div {
+        background: rgba(240, 240, 240, 0.4);
+/*        background: rgba(74,73,74,0.70);*/
+        
+        width: 100%;
+        display: table-cell; 
+        vertical-align: middle;         
+    }
+    
+    .bottom_buttons {
+
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 3;
+        height: 30%;
+        color: #333;
+        text-align: center;
+
+
+    }
+    .call div.v {
+        background: rgba(100, 200, 100, 0.6);
+    }
+    
+    .call div.v, .sms div.v {
+        display: table-cell; 
+        vertical-align: middle;
+        text-align: center;
+        
+    }   
+    
+    .sms div.v {
+        background: rgba(100, 100, 100, 0.7);        
+    }
+    
+    .roundbtn {
+        margin: 0 auto;
+/*        border: 1px solid #999;*/
+        position: relative;
+        height: 70%;
+
+        width: 0;
+        padding-right: 70%;
+
+
+        text-align: center;
+/*        display: table-cell;*/
+/*        vertical-align: middle;*/
+        
+    }
+    
+/*  middle */
+    
+    .middle {
+        position: absolute;
+        z-index: 1;
+        left: 0px;
+        right: 0px;
+/*        height: 2000px;*/
+        top: 7%; /* top menu height */
+        bottom: 30%; /* buttom menu height */
+
+        
+        display: table;
+        overflow: hidden;
+        width: 100%;
+        height: 60%;
+        
+        
+    }
+    .middle div {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+/*        border: 1px solid #999;*/
+        
+    }
+    .middle div * {
+        display: block;
+        margin: 0 auto;
+
+        
+    }
+/*    .middle.landscape .namewrap {
+
+        text-align: left;
+        border: 1px solid #999;
+    }
+*/    .profile_picture {
+        display: none;
+    	width: 200px;
+    	height: 200px;
+    	border-radius: 100px;
+    	-webkit-border-radius: 100px;
+    	-moz-border-radius: 100px;
+    	/*background: url("/images/morten.jpg") no-repeat;   */
+        background-size:cover;
+        image-orientation: from-image;
+
+    }
+    .profile_picture.landscape {
+    	width: 100px;
+    	height: 100px;
+    	border-radius: 50px;
+    	-webkit-border-radius: 50px;
+    	-moz-border-radius: 50px;
+        
+    }
+    .name {
+        position: relative;
+
+        padding-top: 1%;
+        padding-bottom: 1%;
+      font:275% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+      color: #333;
+    }
+    .position {
+        font:125% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+        color: #333;
+        
+    }
+    .company {
+        font:105% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+        color: #333;
+        
+    }
+    .disp_phone {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 50%;
+        bottom: 0px;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+    
+/* Social menu*/
+    .social_menu {
+        display:none;
+        position: absolute;
+        bottom: 9%;
+        left: 0;
+        right: 0;
+        top: auto;
+        z-index: 99999;        
+    }
+
+    .social_menu * li {
+        position: relative;
+        margin-bottom: 1px;
+        min-height: 50px;
+        vertical-align: top;
+        overflow: hidden;
+/*        border: 1px solid #999;*/
+    }
+    .social_menu * li .bg {
+        background: rgba(255,255,255,0.7);
+        position:absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: 1;
+        display: block;
+    }
+    .social_menu * li .content {
+        z-index: 999;
+        position: absolute;
+        left: 8px;
+        top: 10px;
+    }
+    .social_menu * a {
+        color: #333;
+
+        font-size: 180%;        
+        font-weight: 300;
+        position: relative;
+        top: -10px;
+        left: 10px;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }

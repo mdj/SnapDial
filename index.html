@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="humly"  manifest="/files.manifest"  ng-controller="MainCtrl">
+<!-- <html lang="en" ng-app="humly" ng-controller="MainCtrl"> -->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link  class="iconX" rel="apple-touch-icon" href="" />
+
+    <link rel="stylesheet" type="text/css" href="/css/addtohomescreen.css">
+
+    <!--
+        Add a splash screen / startup image.
+        Take note this file exactly needs to be 320x460 for iPhone or 1004x768 for iPad, and is a PNG file.
+        Also, this only works if "apple-mobile-web-app-capable" is set to "yes".
+    -->
+    <!-- <link rel="apple-touch-startup-image" href="images/startup.png" /> -->
+        
+    <!-- <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+    <link  class="iconX" rel="apple-touch-icon-precomposed" href="" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{ Page.title() }}</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <meta name="apple-mobile-web-app-title" content="{{Page.title()}}"/>
+    <link class="iconX" rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link class="iconX" rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link class="iconX" id="favi" rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link class="iconX" rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link class="iconX" rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link class="iconX" rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <!-- <link rel="manifest" href="/manifest.json"> -->
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <base href="/">
+    
+      <script type="text/javascript">
+            function BlockElasticScroll(event) {
+          event.preventDefault() ;
+      }
+  
+      // In JavaScript, you can use "window.navigator.standalone" to detect wether
+      // the page is being viewed on your website, or as a standalone application.
+  
+      // You can also the detect the device the user is using.
+      // var isIPhone = navigator.userAgent.indexOf("iPhone") != -1 ;
+      // var isIPod = navigator.userAgent.indexOf("iPod") != -1 ;
+      // var isIPad = navigator.userAgent.indexOf("iPad") != -1 ;
+      // var isIOs = isIPhone || isIPod || isIPad ;
+
+
+    </script>
+  </head>
+<body>
+ <!-- ontouchmove="BlockElasticScroll(event);"> -->
+
+
+  <div ng-view></div>
+
+
+
+<div id="index" ></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+
+    
+  <script src="/js/vendor/addtohomescreen.js"></script>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+    <script type="text/javascript" src="/js/angular-base64-upload.min.js"></script>
+
+    <script type="text/javascript" src="/js/humlyapp/humlyapp.js"></script>
+    <script type="text/javascript" src="/js/humlyapp/profileControllers.js"></script>
+
+<script src="js/load-image.all.min.js"></script>
+<!--     <script src="/js/load-image.js"></script>
+    <script src="/js/load-image-ios.js"></script>
+    <script src="/js/load-image-orientation.js"></script>
+    <script src="/js/load-image-meta.js"></script>
+    <script src="/js/load-image-exif.js"></script>
+    <script src="/js/load-image-exif-map.js"></script> -->
+
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+CACHE MANIFEST
+# This is a comment.
+# Cache manifest version 0.0.20
+# If you change the version number in this comment,
+# the cache manifest is no longer byte-for-byte
+# identical.
+ 
+/css/style.css
+
+/images/ajax-loader.png
+/images/apple-touch-icon.png
+/images/arrow.png
+/images/close.png
+/images/generate_base64_images
+/images/icon_calendar.png
+/images/icon_jqm.png
+/images/icons-18-black.png
+/images/icons-18-white.png
+/images/icons-36-black.png
+/images/icons-36-white.png
+/images/morten.jpg
+/images/startup.png
+/images/uparrow.png
+/images/uparrow@2x.png
+
+
+
+/partials/profile.html
+/partials/edit.html
+/partials/about.html
+/partials/new.html
+/partials/contact.html
+
+http://code.jquery.com/jquery-2.1.4.min.js
+http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js
+https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js
+https://cdn.firebase.com/js/client/2.2.4/firebase.js
+https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js
+
+
+/js/angular-base64-upload.min.js
+/js/humlyapp/humlyapp.js
+/js/humlyapp/profileControllers.js
+
+
+/bookmark_bubble.js
+/example.js
+
+NETWORK:
+# All URLs that start with the following lines
+# are whitelisted.
+*
+
+FALLBACK:
+
+

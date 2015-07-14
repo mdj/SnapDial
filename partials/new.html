@@ -1,0 +1,165 @@
+<!-- new profile partial page -->
+
+
+<!-- <input type="file" ng-model="profileImage" base-sixty-four-input><br> -->
+<!-- Name: <input type="text" ng-model="name"/><br> -->
+<!-- Phone: <input type="text" ng-model="phone"/><br> -->
+<!-- Position: <input type="text" ng-model="position"/><br> -->
+<!-- Company: <input type="text" ng-model="company"/><br> -->
+<!-- <input type="checkbox" hidden="true" ng-model="isMobile"/><br> -->
+<!-- <button ng-click="uploadFile()">Create contact</button> -->
+
+
+    <!-- <img src="images/cam.png" ng-show="info.canEdit" style="width: 50px; height: auto;"> -->
+
+
+
+<style type="text/css" media="screen">
+
+html {
+    overflow: scroll;
+}
+
+
+.upload_img {
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;   
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 200px;
+    /*border: 1px solid #999;*/
+    background: rgba(50, 50, 50, 0.5) url(/images/cam.png) no-repeat center center;
+    background-size: 40% ;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+/*            opacity: 0;*/
+    
+ }
+ .file_input {
+     position: relative;
+     display: block;
+     width: 100%;
+     height: 200px;
+ 	border-radius: 100px;
+ 	-webkit-border-radius: 100px;
+ 	-moz-border-radius: 100px;
+     opacity: 0;             
+ }
+
+.profile_picture {
+	background-image: url(data:image/png;base64,{{info.image.base64}});
+
+}
+.background-image {
+	background-image: url(data:image/png;base64,{{info.image.base64}});
+
+}
+
+input , button{
+	width: 80%;
+	max-width: 500px;
+	font-size: 1.2em;
+	height: 2em;
+	border: 1px solid #ddd;
+	padding: 6px;
+	margin-bottom: 10px;
+	 -webkit-appearance: none;
+}
+
+    .name {
+    position: relative;
+
+      font:150% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+      color: #333;
+    }
+    .position {
+    	        position: relative;
+        padding-bottom: 1%;
+        font:125% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+        color: #333;
+        
+    }
+    .company {
+    	        position: relative;
+        padding-bottom: 1%;
+        font:105% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+        color: #333;
+        
+    }
+
+    .phone {
+    	        position: relative;
+                        padding-top: 3%;
+        padding-bottom: 1%;
+
+        font:150% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;   
+        color: #333;
+
+
+
+    }
+
+        .middle {
+        position: absolute;
+        z-index: 1;
+        left: 0px;
+        right: 0px;
+/*        height: 2000px;*/
+        top: 2%; /* top menu height */
+        /*bottom: 30%;  buttom menu height */
+
+        
+        display: table;
+        overflow: hidden;
+        width: 100%;
+        height: 60%;
+        
+        
+    }
+
+    button {
+    	height: 50px;
+        background-color: white;
+        border-radius: 10px;
+    }
+</style>
+
+<div class="background-image"></div>
+<div class="background-image_white"></div>
+
+
+<div class="middle">
+    <div>
+        <div class="profile_picture "><div class="upload_img"><input type="file" class="file_input _n _5f0v" title="Choose a file to upload" accept="image/*" autofocus="1" id="js_19" name="photo" ng-model="profileImage" custom-on-change="fileSelected" base-sixty-four-input></div></div>
+        <div class="name_wrap">
+                    <div class="phone">
+                        <input type="tel" ng-model="phone"  placeholder="Phone number"/>
+                        <!-- <input type="checkbox" hidden="true" ng-model="isMobile"/> -->
+            </div>
+
+            <div class="name">
+                <!-- {{info.name}} -->
+                <input type="text" ng-model="name" placeholder="Contact name"/>
+            </div>
+            <div class="position">
+                <!-- {{info.position}} -->
+                <input type="text" ng-model="position"  placeholder="Title"/>
+            </div>
+            <div class="company">
+                <!-- {{info.company}} -->
+                <input type="text" ng-model="company"  placeholder="Affiliation"/>
+            </div>
+
+            {{status}}
+            <button ng-click="create()">Create</button>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
